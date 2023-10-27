@@ -1,4 +1,4 @@
-def encoder(password):
+def encoder(password):  # antonio diaz
     encoded = ''
     for idx in range(len(password)):
         if int(password[idx]) > 7:
