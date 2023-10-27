@@ -17,8 +17,13 @@ while Condition:
     option = int(input("Please enter an option: "))
     if option == 1:
         password = input("Please enter your password to encode: ")
-        print(encoder(password))
+        encoder(password)
+        print("Your password has been encoded and stored!")
+
     if option == 2:
-        pass
+        password = input("Please enter your password to decode: ")
+        decode(password)
+        print(f"The encoded password is {encoder(password)} and the original password is {decode(password)}.")
+
     if option == 3:
         Condition = False
