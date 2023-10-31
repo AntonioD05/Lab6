@@ -5,7 +5,6 @@ def encoder(password):  # antonio diaz
             encoded += str(((int(password[idx]) + 3) % 10))
         else:
             encoded += str(int(password[idx]) + 3)
-    print(encoded)
     return encoded
 
 def decode(password):
