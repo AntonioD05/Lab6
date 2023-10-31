@@ -5,9 +5,17 @@ def encoder(password):  # antonio diaz
             encoded += str(((int(password[idx]) + 3) % 10))
         else:
             encoded += str(int(password[idx]) + 3)
+    print(encoded)
     return encoded
 
-
+def decode(password):
+    decoded_password = []
+    for i in range(len(password)):
+        result = int(password[i])
+        result = (result - 3) % 10
+        decoded_password.append(str(result))
+    decoded_pass = ''.join(decoded_password)
+    return decoded_pass
 
 
 Condition = True
@@ -17,13 +25,12 @@ while Condition:
     option = int(input("Please enter an option: "))
     if option == 1:
         password = input("Please enter your password to encode: ")
-        encoder(password)
+        encoded_password = encoder(password)
         print("Your password has been encoded and stored!")
 
     if option == 2:
-        password = input("Please enter your password to decode: ")
-        decode(password)
-        print(f"The encoded password is {encoder(password)} and the original password is {decode(password)}.")
+        decoded_pass = decode(encoded_password)
+        print(f"The encoded password is {encoded_password} and the original password is {decoded_pass}.")
 
     if option == 3:
         Condition = False
